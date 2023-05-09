@@ -1,0 +1,7 @@
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Form1.resources
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.GenerateResource.cache
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.AssemblyInfoInputs.cache
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.AssemblyInfo.cs
+C:\Users\Bekir\Desktop\DÖNEM PROJE SPOR SALONU\Yeni klasör\Yeni klasör\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.csproj.CoreCompileInputs.cache
