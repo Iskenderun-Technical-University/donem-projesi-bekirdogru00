@@ -9,16 +9,16 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
-        
-        private string button1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection baglanti=null;
+            SqlConnection baglanti = null;
             try
             {
-                baglanti = new SqlConnection(Data Source = DELL\SQLEXPRESS; Initial Catalog = DbSporsalonu; Integrated Security = True);
+                baglanti = new SqlConnection("Data Source=DELL\\SQLEXPRESS;Initial Catalog=DbSporsalonu;Integrated Security=True;");
                 baglanti.Open();
 
-                SqlCommand sqlKomut = new SqlCommand("SELECT MusteiID,MusteriAdi,TelNo,KanGrubu,Cinsiyet FROM MusteriBilgi",baglanti);
+                SqlCommand sqlKomut = new SqlCommand("SELECT MusteriID, MusteriAdi, TelNo, KanGrubu, Cinsiyet FROM MusteriBilgi", baglanti);
                 SqlDataReader sqlDataReader = sqlKomut.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
@@ -28,20 +28,17 @@ namespace WinFormsApp1
                     string KanGrubu = sqlDataReader[3].ToString();
                     string Cinsiyet = sqlDataReader[4].ToString();
                     richTextBox1.Text = richTextBox1.Text + MusteriID + " " + MusteriAdi + "tel no : " + TelNo + "kangrubu:" + KanGrubu + "cinsiyet:" + Cinsiyet + "\n";
-
                 }
-                catch (Exception ex)
-               
-
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("hata oluþtu" + ex.ToString());
+                MessageBox.Show("Hata oluþtu: " + ex.ToString());
             }
             finally
-
-            { if (baglanti != null)
-                baglanti.Close();}
-
-
+            {
+                if (baglanti != null)
+                    baglanti.Close();
             }
         }
     }
+}
