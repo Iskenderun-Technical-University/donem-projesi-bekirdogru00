@@ -1,4 +1,4 @@
-using NPOI.SS.Formula.Functions;
+
 using System.Data.SqlClient;
 
 namespace WinFormsApp1
@@ -27,7 +27,7 @@ namespace WinFormsApp1
                     string TelNo = sqlDataReader[2].ToString();
                     string KanGrubu = sqlDataReader[3].ToString();
                     string Cinsiyet = sqlDataReader[4].ToString();
-                    richTextBox1.Text = richTextBox1.Text + MusteriID + " " + MusteriAdi + "tel no : " + TelNo + "kangrubu:" + KanGrubu + "cinsiyet:" + Cinsiyet + "\n";
+                    richTextBox1.Text = richTextBox1.Text + MusteriID + " " + MusteriAdi + " tel no : " + TelNo + " kangrubu:" + KanGrubu + " cinsiyet:" + Cinsiyet + "\n";
                 }
             }
             catch (Exception ex)

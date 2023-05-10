@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\WinFormsApp1"
   ],
-  "SelectedNode": "\\C:\\Users\\Bekir\\Desktop\\DÖNEM PROJE SPOR SALONU\\Yeni klasör (2)",
+  "SelectedNode": "\\WinFormsApp1\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
