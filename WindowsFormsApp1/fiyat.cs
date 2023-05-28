@@ -21,8 +21,8 @@ namespace WindowsFormsApp1
         {
             
             this.Hide();   
-            form anasayfa = new Form();
-            anasayfa.ShowDialog();
+            anasayfa an1 = new anasayfa();
+            an1.Show();
             
         }
     }

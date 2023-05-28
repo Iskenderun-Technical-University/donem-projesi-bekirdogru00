@@ -44,5 +44,12 @@ namespace WindowsFormsApp1
             textBox6.Clear();
             bagla.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            anasayfa an1 = new anasayfa();
+            an1.Show();
+        }
     }
 }
