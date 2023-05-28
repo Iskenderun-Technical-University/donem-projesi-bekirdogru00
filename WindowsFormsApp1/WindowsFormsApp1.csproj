@@ -70,6 +70,11 @@
     <Compile Include="guncellemesilme.Designer.cs">
       <DependentUpon>guncellemesilme.cs</DependentUpon>
     </Compile>
+    <Compile Include="guvenlikDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>guvenlikDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="uyeekle.cs">
@@ -120,6 +125,17 @@
     <EmbeddedResource Include="üyegörüntüle.resx">
       <DependentUpon>üyegörüntüle.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="guvenlikDataSet.xsc">
+      <DependentUpon>guvenlikDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="guvenlikDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>guvenlikDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="guvenlikDataSet.xss">
+      <DependentUpon>guvenlikDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
