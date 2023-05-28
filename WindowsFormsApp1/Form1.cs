@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
- 
+
 
 namespace WindowsFormsApp1
 {
@@ -25,23 +25,23 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user =textBox1.Text;
-            string password =textBox2.Text;
+            string user = textBox1.Text;
+            string password = textBox2.Text;
             con = new SqlConnection("Data Source=DELL\\SQLEXPRESS;Initial Catalog=guvenlik;Integrated Security=True");
-            com= new SqlCommand();
-            con.Open(); 
+            com = new SqlCommand();
+            con.Open();
             com.Connection = con;
-            com.CommandText = "Select*From parola where ad'" + textBox1.Text +
-                "'And sifre'" + textBox2.Text + "'";
-            dr= com.ExecuteReader();
-            if(dr.Read())
+            com.CommandText = "SELECT * FROM parola WHERE ad='" + textBox1.Text + "' AND sifre='" + textBox2.Text + "'";
+
+            dr = com.ExecuteReader();
+            if (dr.Read())
             {
                 MessageBox.Show("GİRİŞ BAŞARILI");
-                anasayfa gecis=new anasayfa();
+                anasayfa gecis = new anasayfa();
                 gecis.Show();
                 this.Hide();
             }
-          else
+            else
             {
                 MessageBox.Show("YANLIŞ KULLANICI ADI VEYA ŞİFRE");
             }
@@ -49,3 +49,4 @@ namespace WindowsFormsApp1
         }
     }
 }
+

@@ -32,5 +32,15 @@ namespace WindowsFormsApp1.Properties {
                 return ((string)(this["guvenlikConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DELL\\SQLEXPRESS;Initial Catalog=kayitekle;Integrated Security=True")]
+        public string kayitekleConnectionString {
+            get {
+                return ((string)(this["kayitekleConnectionString"]));
+            }
+        }
     }
 }

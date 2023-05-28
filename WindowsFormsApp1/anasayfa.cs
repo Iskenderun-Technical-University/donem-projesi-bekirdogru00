@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.kayitekleDataSetTableAdapters;
 
 namespace WindowsFormsApp1
 {
@@ -24,7 +25,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            uyeekle üyeekle = new uyeekle();
+            üyeekle.Show();
+            Hide();
+            
         }
     }
 }
