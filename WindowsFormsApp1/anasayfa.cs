@@ -30,5 +30,33 @@ namespace WindowsFormsApp1
             Hide();
             
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            fiyat f1 = new fiyat();
+            f1.Show();
+            Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ödemeler o1 = new ödemeler();
+            o1.Show();
+            Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            guncellemesilme g1 = new guncellemesilme();
+            g1.Show();
+            Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            üyegörüntüle ug1 = new üyegörüntüle();
+            ug1.Show();
+            Hide();
+        }
     }
 }

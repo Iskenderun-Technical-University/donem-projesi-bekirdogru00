@@ -68,8 +68,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 44);
             this.button2.TabIndex = 2;
-            this.button2.Text = "GÜNCELLE";
+            this.button2.Text = "GÖRÜNTÜLE";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -81,6 +82,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "ÖDEME";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -90,8 +92,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(165, 44);
             this.button4.TabIndex = 4;
-            this.button4.Text = "SİL";
+            this.button4.Text = "GÜNCELLEME VE SİLME";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -103,6 +106,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "ÜYELİK FİYATLARI";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // anasayfa
             // 
