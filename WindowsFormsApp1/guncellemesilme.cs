@@ -45,15 +45,19 @@ namespace WindowsFormsApp1
         {
             uyeler();
         }
-
+        int key = 0;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            adsoyadtb.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            telnotb.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            yaştb.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            kangrubucb.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            cinsiyetcb.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            ücrettb.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+            key = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            
+                adsoyadtb.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                telnotb.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                yaştb.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                kangrubucb.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                cinsiyetcb.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                ücrettb.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+           
         }
+
     }
 }
