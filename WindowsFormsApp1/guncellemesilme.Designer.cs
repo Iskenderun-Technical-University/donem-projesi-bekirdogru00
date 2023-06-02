@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(guncellemesilme));
             this.button1 = new System.Windows.Forms.Button();
             this.cinsiyetcb = new System.Windows.Forms.ComboBox();
@@ -47,9 +48,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.kayitekleDataSet = new WindowsFormsApp1.kayitekleDataSet();
+            this.kayitekleDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitekleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitekleDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -232,7 +237,16 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(494, 272);
             this.dataGridView1.TabIndex = 37;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // kayitekleDataSet
+            // 
+            this.kayitekleDataSet.DataSetName = "kayitekleDataSet";
+            this.kayitekleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kayitekleDataSetBindingSource
+            // 
+            this.kayitekleDataSetBindingSource.DataSource = this.kayitekleDataSet;
+            this.kayitekleDataSetBindingSource.Position = 0;
             // 
             // guncellemesilme
             // 
@@ -265,6 +279,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitekleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kayitekleDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +306,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource kayitekleDataSetBindingSource;
+        private kayitekleDataSet kayitekleDataSet;
     }
 }
