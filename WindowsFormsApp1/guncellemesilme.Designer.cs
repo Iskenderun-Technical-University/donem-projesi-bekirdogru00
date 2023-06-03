@@ -162,6 +162,7 @@
             // 
             // adsoyadtb
             // 
+            this.adsoyadtb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kayitekleDataSet, "üyeekle.adsoyad", true));
             this.adsoyadtb.Location = new System.Drawing.Point(174, 81);
             this.adsoyadtb.Name = "adsoyadtb";
             this.adsoyadtb.Size = new System.Drawing.Size(121, 20);

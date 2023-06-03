@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
             sda.Fill(ds);
             bagla.Close();
 
-            dataGridView1.DataSource = ds.Tables[0];
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -48,24 +48,19 @@ namespace WindowsFormsApp1
         int key = 0;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-
-                key = Convert.ToInt32(row.Cells[0].Value.ToString());
-                adsoyadtb.Text = row.Cells[1].Value.ToString();
-                telnotb.Text = row.Cells[2].Value.ToString();
-                yaştb.Text = row.Cells[3].Value.ToString();
-                kangrubucb.SelectedItem = row.Cells[4].Value.ToString();
-                cinsiyetcb.SelectedItem = row.Cells[5].Value.ToString();
-                ücrettb.Text = row.Cells[6].Value.ToString();
-
-              
+          
+                adsoyadtb.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                telnotb.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                yaştb.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                kangrubucb.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                cinsiyetcb.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                ücrettb.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
             }
         }
 
 
 
 
+
+
     }
-}

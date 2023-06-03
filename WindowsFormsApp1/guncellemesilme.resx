@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="kayitekleDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -262,19 +265,13 @@
         gg==
 </value>
   </data>
-  <metadata name="kayitekleDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="kayitekleDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>159, 17</value>
-  </metadata>
-  <metadata name="kayitekleDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDgAAAQ4CAYAAADsEGyPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7s/YdyHUmSbo3OtChdZBVliVbTZ2bO/9u1e9//7XBzbWCRH708cueG
+        wAAADsABataJCQAA/7JJREFUeF7s/YdyHUmSbo3OtChdZBVliVbTZ2bO/9u1e9//7XBzbWCRH708cueG
         IAHS22x1eLgKmZGiAPA/vvrqq6thGIZhGIZhGIZhGIanzHzgGIZhGIZhGIZhGIbhyTMfOIZhGIZhGIZh
         GIZhePLMB45hGIZhGIZhGIZhGJ4884FjGIZhGIZhGIZhGIYnz3zgGIZhGIZhGIZhGIbhyTMfOIZhGIZh
         GIZhGIZhePLMB45hGIZhGIZhGIZhGJ4884FjGIZhGIZhGIZhGIYnz3zgGIZhGIZhGIZhGIbhyTMfOIZh
