@@ -93,5 +93,11 @@ namespace WindowsFormsApp1
             FillName();
             uyeler();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            adsoyadcb.Text = "";
+            ucrettb.Text = "";
+        }
     }
 }
