@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         {
             uyeler();
         }
-        int key = 0;
+        int key ;
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             adsoyadtb.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -87,25 +87,20 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (key == 0)
+            if (key == 0 || string.IsNullOrEmpty(adsoyadtb.Text) || string.IsNullOrEmpty(telnotb.Text) || string.IsNullOrEmpty(yaştb.Text) || string.IsNullOrEmpty(kangrubucb.Text) || string.IsNullOrEmpty(cinsiyetcb.Text) || string.IsNullOrEmpty(ücrettb.Text))
             {
-                MessageBox.Show("Güncellenecek üyeyi seçiniz.");
+                MessageBox.Show("Eksik bilgi");
             }
             else
             {
                 try
                 {
-                    string sorgu = "UPDATE kayitekle SET adsoyad=@adsoyad, telno=@telno, yaş=@yaş, kangrubu=@kangrubu, cinsiyet=@cinsiyet, ücret=@ücret WHERE id=@id";
-                    SqlCommand komut = new SqlCommand(sorgu, bagla);
-                    komut.Parameters.AddWithValue("@adsoyad", adsoyadtb.Text);
-                    komut.Parameters.AddWithValue("@telno", telnotb.Text);
-                    komut.Parameters.AddWithValue("@yaş", yaştb.Text);
-                    komut.Parameters.AddWithValue("@kangrubu", kangrubucb.Text);
-                    komut.Parameters.AddWithValue("@cinsiyet", cinsiyetcb.Text);
-                    komut.Parameters.AddWithValue("@ücret", ücrettb.Text);
-                    komut.Parameters.AddWithValue("@id", key);
                     bagla.Open();
+                    string sorgu = "UPDATE kayitekle SET adsoyad='" + adsoyadtb.Text + "', telno='" + telnotb.Text + "', yaş='" + yaştb.Text + "', kangrubu='" + kangrubucb.Text + "', cinsiyet='" + cinsiyetcb.Text + "', ücret='" + ücrettb.Text + "' WHERE id='" + key + "'";
+                    SqlCommand komut = new SqlCommand(sorgu, bagla);
+
                     komut.ExecuteNonQuery();
+                    MessageBox.Show("üye başarı ile güncellendi");
                     bagla.Close();
                     uyeler();
                 }
@@ -114,12 +109,10 @@ namespace WindowsFormsApp1
                     MessageBox.Show(ex.Message);
                 }
             }
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
-}
+
+   
+    }
