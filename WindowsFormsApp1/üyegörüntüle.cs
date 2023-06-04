@@ -41,7 +41,14 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            bagla.Open();
+            SqlCommand komut = new SqlCommand("Select * from kayitekle where adsoyad like '%"+ textBox1.Text+ "%'",bagla);
+            SqlDataAdapter da = new SqlDataAdapter(komut);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource= ds.Tables[0];
+            bagla.Close();
+           
         }
 
         private void üyegörüntüle_Load(object sender, EventArgs e)

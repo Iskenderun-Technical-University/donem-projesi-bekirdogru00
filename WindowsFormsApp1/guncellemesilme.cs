@@ -11,27 +11,30 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class guncellemesilme : Form
     {
+        SqlConnection bagla = new SqlConnection("Data Source=DELL\\SQLEXPRESS;Initial Catalog=kayitekle;Integrated Security=True");
+        private int selectedRowKey = 0;
+
         public guncellemesilme()
         {
             InitializeComponent();
         }
 
-        SqlConnection bagla = new SqlConnection("Data Source=DELL\\SQLEXPRESS;Initial Catalog=kayitekle;Integrated Security=True");
         private void uyeler()
         {
-            bagla.Open();
-            string query = "select *from kayitekle";
+            string query = "SELECT * FROM kayitekle";
             SqlDataAdapter sda = new SqlDataAdapter(query, bagla);
-            SqlCommandBuilder builder = new SqlCommandBuilder();
             var ds = new DataSet();
             sda.Fill(ds);
             dataGridView1.DataSource = ds.Tables[0];
-            bagla.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -45,16 +48,21 @@ namespace WindowsFormsApp1
         {
             uyeler();
         }
-        int key ;
+
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            adsoyadtb.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            telnotb.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            yaştb.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            kangrubucb.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            cinsiyetcb.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            ücrettb.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                adsoyadtb.Text = row.Cells[0].Value.ToString();
+                telnotb.Text = row.Cells[1].Value.ToString();
+                yaştb.Text = row.Cells[2].Value.ToString();
+                kangrubucb.Text = row.Cells[3].Value.ToString();
+                cinsiyetcb.Text = row.Cells[4].Value.ToString();
+                ücrettb.Text = row.Cells[5].Value.ToString();
 
+                selectedRowKey = Convert.ToInt32(row.Cells["id"].Value);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,7 +95,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (key == 0 || string.IsNullOrEmpty(adsoyadtb.Text) || string.IsNullOrEmpty(telnotb.Text) || string.IsNullOrEmpty(yaştb.Text) || string.IsNullOrEmpty(kangrubucb.Text) || string.IsNullOrEmpty(cinsiyetcb.Text) || string.IsNullOrEmpty(ücrettb.Text))
+            if (selectedRowKey == 0 || string.IsNullOrEmpty(adsoyadtb.Text) || string.IsNullOrEmpty(telnotb.Text) || string.IsNullOrEmpty(yaştb.Text) || string.IsNullOrEmpty(kangrubucb.Text) || string.IsNullOrEmpty(cinsiyetcb.Text) || string.IsNullOrEmpty(ücrettb.Text))
             {
                 MessageBox.Show("Eksik bilgi");
             }
@@ -96,11 +104,18 @@ namespace WindowsFormsApp1
                 try
                 {
                     bagla.Open();
-                    string sorgu = "UPDATE kayitekle SET adsoyad='" + adsoyadtb.Text + "', telno='" + telnotb.Text + "', yaş='" + yaştb.Text + "', kangrubu='" + kangrubucb.Text + "', cinsiyet='" + cinsiyetcb.Text + "', ücret='" + ücrettb.Text + "' WHERE id='" + key + "'";
+                    string sorgu = "UPDATE kayitekle SET adsoyad=@adsoyad, telno=@telno, yaş=@yaş, kangrubu=@kangrubu, cinsiyet=@cinsiyet, ücret=@ücret WHERE id=@id";
                     SqlCommand komut = new SqlCommand(sorgu, bagla);
+                    komut.Parameters.AddWithValue("@adsoyad", adsoyadtb.Text);
+                    komut.Parameters.AddWithValue("@telno", telnotb.Text);
+                    komut.Parameters.AddWithValue("@yaş", yaştb.Text);
+                    komut.Parameters.AddWithValue("@kangrubu", kangrubucb.Text);
+                    komut.Parameters.AddWithValue("@cinsiyet", cinsiyetcb.Text);
+                    komut.Parameters.AddWithValue("@ücret", ücrettb.Text);
+                    komut.Parameters.AddWithValue("@id", selectedRowKey);
 
                     komut.ExecuteNonQuery();
-                    MessageBox.Show("üye başarı ile güncellendi");
+                    MessageBox.Show("Üye başarıyla güncellendi");
                     bagla.Close();
                     uyeler();
                 }
@@ -110,9 +125,5 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
-
     }
-
-   
-    }
+}
